@@ -17,7 +17,7 @@
 ## Software requirements
 ### OS Requirements
 This package is supported for *Windows*. The package has been tested on the following systems:
-+ Windows: Windows Pro (2004)
++ Windows: Windows 10 Pro (2004)
 
 ### Python Dependencies
 There is no python dependency when use `qPHA.exe` directly.
