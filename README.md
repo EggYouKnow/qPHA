@@ -22,7 +22,7 @@ This package is supported for *Windows*. The package has been tested on the foll
 ### Python Dependencies
 There is no python dependency when use `qPHA.exe` directly.
 
-Otherwise, it mainly depends on the following Python packages.
+Otherwise, it depends on the following Python packages:
 ```
 numpy
 scipy
