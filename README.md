@@ -31,7 +31,7 @@ PyQt5
 
 # Installation Guide:
 
-Directly run `qPHA.exe` or run ./Python/qPHA.py with Python 3.
+Directly run `qPHA.exe` in qPHA.zip or run ./Python/qPHA.py with Python 3.
 It takes few seconds to run the `qPHA.exe`.
 
 # How to Use
