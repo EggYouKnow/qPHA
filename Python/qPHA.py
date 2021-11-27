@@ -3,7 +3,7 @@ import PyQt5
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow
-import os
+import pathlib
 
 import Ui_FLIPPED
 from _functions import *
@@ -30,13 +30,14 @@ class MainDialog(QMainWindow):
         self.ui.RunPrediction.clicked.connect(self.predict)
 
     def open_file(self):
-        fileName, fileType = QtWidgets.QFileDialog.getOpenFileName(self, "Load File", os.getcwd(),
+        fileName, fileType = QtWidgets.QFileDialog.getOpenFileName(self, "Load File", str(pathlib.Path.cwd()),
                                                                    "CSV Files(*.csv)")
         if 'csv' in fileType:
             self.ui.FilePath.setText(fileName)
             self.fit_dt, self.pred_dt = load_data(fileName)
         else:
-            self.ui.FilePath.setText('Please select a .csv file! [Files -> import data]')
+            self.ui.FilePath.setText(
+                'Please select a .csv file! [Files -> import data]')
 
     def fit(self):
         funcname = self.ui.comboBox.currentText()
@@ -61,12 +62,15 @@ class MainDialog(QMainWindow):
         funcname = self.ui.comboBox.currentText()
         if funcname == 'Linear' and len(self.param) != 4:
             self.pred_dt['Pha(%)'] = pred_PHA(self.pred_dt, funcname, [])
-            self.ui.FitResults.setText('Using default parameters of linear function!')
+            self.ui.FitResults.setText(
+                'Using default parameters of linear function!')
         elif funcname == 'Exponential' and len(self.param) != 5:
             self.pred_dt['Pha(%)'] = pred_PHA(self.pred_dt, funcname, [])
-            self.ui.FitResults.setText('Using default parameters of exponential function!')
+            self.ui.FitResults.setText(
+                'Using default parameters of exponential function!')
         else:
-            self.pred_dt['Pha(%)'] = pred_PHA(self.pred_dt, funcname, self.param)
+            self.pred_dt['Pha(%)'] = pred_PHA(
+                self.pred_dt, funcname, self.param)
 
         output = 'OD600 |  FI  | PHA (%) |'
         for i in range(len(self.pred_dt['Pha(%)'])):
@@ -74,10 +78,9 @@ class MainDialog(QMainWindow):
                 % (self.pred_dt["OD"][i], self.pred_dt["FI"][i], self.pred_dt["Pha(%)"][i])
 
         self.ui.PredictResults.setText(output)
-            
 
     def save_file(self):
-        dirpath, _ = QtWidgets.QFileDialog.getSaveFileName(self, "New File", os.getcwd(),
+        dirpath, _ = QtWidgets.QFileDialog.getSaveFileName(self, "New File", str(pathlib.Path.cwd()),
                                                            "CSV Files(*.csv)")
 
         if 'csv' in dirpath:
@@ -86,8 +89,8 @@ class MainDialog(QMainWindow):
             save_array[:, 1] = self.pred_dt['FI']
             save_array[:, 2] = self.pred_dt['Pha(%)']
             np.savetxt(dirpath, save_array,
-                    delimiter=',', fmt='%.2f',
-                    header="OD,FI,PHA (%)", comments="")
+                       delimiter=',', fmt='%.2f',
+                       header="OD,FI,PHA (%)", comments="")
 
     def clear_all(self):
         self.param = []
@@ -96,7 +99,8 @@ class MainDialog(QMainWindow):
 
         self.ui.FitResults.setText('')
         self.ui.PredictResults.setText('')
-        self.ui.FilePath.setText('Please select a .csv file! [Files -> import data]')
+        self.ui.FilePath.setText(
+            'Please select a .csv file! [Files -> import data]')
 
 
 if __name__ == "__main__":
