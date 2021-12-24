@@ -30,8 +30,11 @@ PyQt5
 ```
 
 # Installation Guide:
+Two ways to use qPHA:
+1. Unzip the `qPHA.zip` and run `qPHA.exe` in '/qPHA' folder.
 
-Directly run `qPHA.exe` in `qPHA.zip` or run ./Python/qPHA.py with Python 3.
+2. run ./Python/qPHA.py with Python 3.
+
 It takes few seconds to run the `qPHA.exe`.
 
 # How to Use
