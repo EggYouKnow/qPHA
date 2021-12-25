@@ -31,11 +31,11 @@ PyQt5
 
 # Installation Guide:
 Two ways to use qPHA:
-1. Unzip the `qPHA.zip` and run `qPHA.exe` in '/qPHA' folder.
+1. Unzip the `qPHA.zip` and run `qPHA.exe`.
 
 2. run ./Python/qPHA.py with Python 3.
 
-It takes few seconds to run the `qPHA.exe`.
+It takes few seconds to run the `qPHA`. Please ignore the protection report from windows defender and continue to run the software.
 
 # How to Use
 1. Save experimental data to a .csv file. Use the same format as the **Demo** file 'Import_data-sample.csv'. For the points need prediction, please fill the PHA (%) with 'NaN'. (**Note**: Use 'Save as' function of Excel to save the input .csv file, even after editing a .csv file)
