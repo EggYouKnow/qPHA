@@ -1,3 +1,5 @@
+# main
+
 import sys
 import PyQt5
 from PyQt5 import QtWidgets
@@ -7,7 +9,6 @@ import pathlib
 
 import Ui_FLIPPED
 from _functions import *
-
 
 class MainDialog(QMainWindow):
     def __init__(self, parent=None):
@@ -21,6 +22,7 @@ class MainDialog(QMainWindow):
         self.ui.actionImport_Data.triggered.connect(self.open_file)
         self.ui.actionSave_Data.triggered.connect(self.save_file)
         self.ui.actionClear.triggered.connect(self.clear_all)
+        self.fit_dt = 'None'
 
         # fit
         self.param = []
@@ -42,14 +44,17 @@ class MainDialog(QMainWindow):
     def fit(self):
         funcname = self.ui.comboBox.currentText()
 
-        if funcname == 'Linear':
+        if self.fit_dt == 'None':
+            self.ui.FitResults.setText('Please Import Data!')
+            return None
+
+        if funcname == 'Linear' and self.fit_dt != 'None':
             self.param, r_2 = fit_surface(self.fit_dt, funcname)
             output = 'PHA (%) = a*(OD-b1)/(k*(FI-b2)-(OD-b1))'
-            output = output+'\n'+'||a=%.2E|b1=%.2E|b2=%.2E|k=%.2E||' \
-                % (self.param[0], self.param[1], self.param[2], self.param[3])
+            output = output+'\n'+'||a=%.2E|b1=%.2E|b2=%.2E|k=%.2E||' %(self.param[0], self.param[1], self.param[2], self.param[3])
             output = output + '\n'+'> R_squared=%.2f <' % r_2
 
-        elif funcname == 'Exponential':
+        elif funcname == 'Exponential' and self.fit_dt != 'None':
             self.param, r_2 = fit_surface(self.fit_dt, funcname)
             output = 'OD = b1 + a*(FI-b2)*PHA(%)/[exp(k*PHA(%))+c]'
             output = output+'\n'+'||a=%.2E|b1=%.2E|b2=%.2E|k=%.2E|c=%.2E||' \
@@ -60,6 +65,11 @@ class MainDialog(QMainWindow):
 
     def predict(self):
         funcname = self.ui.comboBox.currentText()
+
+        if self.fit_dt == 'None':
+            self.ui.PredictResults.setText('Please Import Data!')
+            return None
+
         if funcname == 'Linear' and len(self.param) != 4:
             self.pred_dt['Pha(%)'] = pred_PHA(self.pred_dt, funcname, [])
             self.ui.FitResults.setText(
@@ -95,7 +105,7 @@ class MainDialog(QMainWindow):
     def clear_all(self):
         self.param = []
         self.pred_dt = []
-        self.fit_dt = []
+        self.fit_dt = 'None'
 
         self.ui.FitResults.setText('')
         self.ui.PredictResults.setText('')
@@ -103,8 +113,10 @@ class MainDialog(QMainWindow):
             'Please select a .csv file! [Files -> import data]')
 
 
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     mDlg = MainDialog()
     mDlg.show()
     sys.exit(app.exec_())
+

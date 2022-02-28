@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 # Form implementation generated from reading ui file 'f:\00-CQB Work\04 - TDPHA\Main-5-APP_for_use\FLIPPED.ui'
 #
@@ -81,20 +81,24 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Data Path -&gt;</span></p></body></html>"))
+        self.label_4.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Data Path -&gt;</span></p></body></html>"))
         self.FilePath.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'SimSun\'; font-size:11.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Please import data for fitting and predicting!</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[Files-&gt;import data]</p></body></html>"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Select Function Type -&gt;</span></p></body></html>"))
+                                         "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                         "p, li { white-space: pre-wrap; }\n"
+                                         "</style></head><body style=\" font-family:\'SimSun\'; font-size:11.25pt; font-weight:400; font-style:normal;\">\n"
+                                         "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Please import data for fitting and predicting!</p>\n"
+                                         "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[Files-&gt;import data]</p></body></html>"))
+        self.label.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Select Function Type -&gt;</span></p></body></html>"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Linear"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Exponential"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Parameter Estimation</span></p></body></html>"))
+        self.label_2.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Parameter Estimation</span></p></body></html>"))
         self.RunFit.setText(_translate("MainWindow", "Run Estimation"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Prediction of PHA (%)</span></p></body></html>"))
-        self.RunPrediction.setText(_translate("MainWindow", "Run Predction"))
+        self.label_3.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Prediction of PHA (%)</span></p></body></html>"))
+        self.RunPrediction.setText(_translate("MainWindow", "Run Prediction"))
         self.menu.setTitle(_translate("MainWindow", "Files"))
         self.actionImport_Data.setText(_translate("MainWindow", "Import Data"))
         self.actionSave_Data.setText(_translate("MainWindow", "Save Data"))

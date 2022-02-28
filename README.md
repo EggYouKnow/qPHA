@@ -31,7 +31,7 @@ PyQt5
 
 # Installation Guide:
 Two ways to use qPHA:
-1. Unzip the `qPHA.zip` and run `qPHA.exe`.
+1. Unzip the `qPHA.zip`, and run `qPHA.exe` to to use the software (If the ink is not working, please run `./main/qPHA.exe`.)
 
 2. run ./Python/qPHA.py with Python 3.
 
