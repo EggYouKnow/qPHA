@@ -1,6 +1,6 @@
 # A GUI design software for the __qPHA__ method
 
-`qPHA.exe` is a GUI design software for the **qPHA** method - a rapid quantification method of polyhydroxyalkanoates (PHA) accumulated in living cells based on green fluorescence proteins labeled phasi.
+`qPHA.exe` is a GUI design software for the **qPHA** method - a rapid quantification method of polyhydroxyalkanoates (PHA) accumulated in living cells based on green fluorescence proteins labeled phasi [1].
 
 # Contents
 
@@ -50,3 +50,7 @@ It takes few seconds to run the `qPHA`. Please ignore the protection report from
 This project is covered under the **Apache 2.0 License**.
 
 # Reference
+[1] Rapid Quantification of Polyhydroxyalkanoates Accumulated in Living Cells Based on Green Fluorescence Protein-Labeled Phasins: The qPHA Method
+Xu Liu, Dianjie Li, Xu Yan, Zonghao Zhang, Shuang Zheng, Jingpeng Zhang, Wuzhe Huang, Fuqing Wu, Fangting Li, and Guo-Qiang Chen.
+Biomacromolecules (2022).
+DOI: 10.1021/acs.biomac.2c00624
